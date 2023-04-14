@@ -1,0 +1,696 @@
+java programming languge
+
+develop different types applications:
+
+
+  - standalone apps  - JSE ( core java)
+
+  - web and enterpirse apps  - JEE
+
+  - mobile apps  - JME
+
+-------------------------------------------
+
+    software required:
+
+          JDK  =  development tools + JRE
+
+          JRE = predefined api + JVM
+
+    java api - Application Programming Interface  ( predefined Packages which contains classes and interfaces) 
+
+
+
+   how to create java program, how to compile and how run
+
+  - language basics - 
+
+  - object orientation- class and objects
+
+  - etc....
+
+
+---------------------------------------------------
+
+  keywords:
+
+
+  datatypes:
+
+     1. primitive types
+
+          -> integer types  - byte, short, int , long
+
+          -> floating types  - float, double
+
+          -> character type  - char
+
+          -> boolean type  - boolean
+
+     2. reference types (userdefined and predefined)
+
+
+-------------------------------------------
+
+  main objective of object orientation programming:
+
+  - mapping real world entities into programming modules
+
+  Object :
+
+    a real world entity- physical or conceptual
+
+    physical - car, building etc
+
+    conceptual - account, employee , order etc..
+
+   every object has state and behaviour:
+
+
+
+
+  class :
+
+         - blueprint/template for creating objects.
+
+
+  how to create class?
+
+  
+   class Account {
+
+    //variables which determines the state of the object
+    int accountno;
+    String name;
+    double balance;   
+
+    //methods(behaviour)
+    void deposit(double amount) {
+
+    }
+
+    void withdraw(double amount) {
+
+    }
+
+    void checkBalance() {
+
+    }
+
+   }
+
+
+
+--------------------------------
+
+    int a ; //declaring variable
+   ---
+   ----
+
+    a = 10;  // assign value to the variable
+
+    int k = 10; // initialization
+
+  constructor:
+
+    - used to initialize objects
+
+    - its special type of method called automatically at the time of object creation
+
+    rules:
+
+         1. constructor name is same name as class name
+
+         2. constructor don't have any return type ,even void also
+
+		3. we can defined any no of constructors inside a class ( called constructor overloading)
+
+     types :
+
+           1. zero argument constructors
+
+           2. parameterized constructors
+ 
+       e.g :
+                  class Employee {
+                    	int empno;
+                    	String name;
+                   
+ 					Employee() {      //constructor definition
+            				empno = 101;
+                         name = "djfdk";
+                      }
+
+                      void displayEmp() {
+
+                      }
+
+                   }
+
+              how to call constructor ?  - automactically called at the time of obj creation
+
+				Employee emp1 = new Employee();
+            
+
+
+  --------------------------------
+
+   this key word:
+
+     - this refer to current object reference.
+
+     use of this keyword:
+
+		1. if local variables and instance varibles having the same name to refer instance variables use this keyword.
+
+        2. to call the same class constructor
+
+
+
+------------------------------------------------
+
+  static keyword:
+
+   1. static variables and  static methods
+   
+   class Student {
+
+	int studentNo;  //instance variable
+    String name;   // instance variable
+
+    static String university;  // static or class variable
+
+
+    void display() {
+		int k = 10; // local
+    }      
+   }
+
+   for instance variables - 
+
+		how many instances(objects) we created those many no of copies memory allocated
+
+        memory is allocated at the time of object creation
+
+   for static varialbes -
+
+		 only one copy of the variable is created.
+
+         memory is allocated at the time of loading the class
+
+   Student st1 = new Student() ;
+
+   Student st2 = new Student() ;
+
+ 
+  static methods:
+
+    
+   class Calculator {
+
+     static int cube(int n) {
+        return n*n*n;
+      }
+   }
+
+
+    how to call static method?
+    
+    className.methodName  or className.staticVariableName
+
+    
+    int r = Calculator.cube(2);
+
+
+
+-----------------------------------------------------
+
+packages:
+
+    - packages in java is similar to folder structure in os.
+
+    - package contains classes and interfaces.
+
+   - easy access
+
+   - grouping related files into a package
+
+   - restict the access
+
+   - java api is a collection of packages
+
+   - e.g  predefined packages:
+
+           java.lang
+           java.util
+           java.io. 
+           etc
+
+
+    com ----  Demo.java
+
+    org --- Employee.java
+
+ 
+ access specifiers:
+
+
+  1. public  - anywhere 
+
+  2. protected  - within the package and outside package within subclasses
+
+  3. private   - with the class
+
+  4.        (default)  - with in the package
+
+
+
+
+   classes  :
+
+     class can have only two access levels
+
+       1. public  
+
+       2.      (default)
+
+      e.g 
+            public class A {
+
+             }
+
+            class B {
+
+             }
+
+   class members : (variables and methods) can have all access levels
+   
+       public class A {
+
+          int i;
+         private int j;
+         protected String k;
+         public double d;
+
+         private void m1() {
+
+         }
+
+          void m1() {
+
+         }
+
+         protected void m1() {
+
+         }
+
+         public void m1() {
+
+         }
+    }
+
+
+---------------------------------------------------------------------
+
+
+   Strings:
+
+     - collection of characters
+
+     - string is an object (class) in java.lang package.
+
+    how to create string object?
+
+    1. using String class
+
+          >  using new operator
+
+             String st = new String("raj");
+
+          > using string literal
+
+             String st = "raj";
+
+
+    2. using StringBuffer class
+
+           StringBuffer sb = new StringBuffer("raj");
+
+
+    3. using StringBuilder class
+
+           StringBuilder st = new StringBuilder("raj");
+
+
+
+    	diff bewteen String and StringBuffer and StringBuilder
+
+    - String class objects are immutable. once you create the object it can't be modified
+
+    - StringBuffer and StringBuilder class objects are mutable
+
+
+---------------------------------------------------------------------
+
+arrays:
+
+   - collection of similar types
+
+   - in java, array is an object
+
+   - we can store primitives and reference types 
+
+   primitive array:
+
+    e.g
+
+           int[] nums = new int[4];
+
+           doulbe[] units = new double[5];
+
+           char[] chs = new char[4];
+
+
+         how to add/store elements into array?
+	
+			 int[] nums = new int[4];
+              nums[0] = 10;
+       		 nums[1] = 20;
+             nums[2] = 50;
+             nums[3] = 40;
+	      
+
+   reference array:
+
+     String[] courses = new String[4];
+     courses[0] = "java";
+     courses[1] = "html";
+     courses[2] = "css";
+     courses[3] = "js";
+
+    Product[] products = new Product[4];
+
+
+   array initialization :
+
+    int[] nums = {10,20,30,40};
+
+    char[] chs = {'a','e','i','o','u'}
+
+    String[] courses = {"java","html","sql"};
+
+
+-------------------------------------
+
+Scanner class:
+
+    - in java.util package.
+
+    - for reading input from keyboard or file or any resource
+
+
+   
+
+day4:
+
+abstract keyword:
+
+   -  classes and methods
+
+
+abstract methods:
+
+  - methods witout any implementation only declaration
+
+  e.g :  abstract public void m1();
+
+abstract classes:
+
+  - if a class contains atleast one abstract method the class must be abstract.
+
+  e.g 
+            abstract class Test {
+             abstract void m1();
+           }
+
+    - subclasses which extends abstract class has to implement abstract methods.
+
+        calss Demo extends Test {
+
+             void m1() {
+				//implementation
+             }
+         }
+
+     - we can not create object for abstract classes.
+
+           Test t = new Test();  //error
+
+     - an abstract class can contains abstract methods and non abstract methods.
+
+         abstract class MyClass {
+
+            abstract void m1();
+
+            void m2() {
+
+            }
+         }
+
+    - we can declare a class as abstract without any abstract methods.
+
+
+        abstract class MyClass {
+
+			void m1() {
+
+             }
+            void m2() {
+        
+             }
+       }
+
+-----------------------------------------------------
+
+
+  in java , constants are -  public static final variables.
+
+
+  int i = 10;
+   i = 20; //ok
+
+  final int k = 30; // final variables we can't modify
+   k = 40; //error
+
+
+  interfaces :
+
+     - an interface is like class type of construct.
+
+     - class contains variables and methods.
+
+     class MyClass {  
+
+		String s;
+
+       	void m1() {
+
+       	}
+     }
+
+     - interface also contains variables and method but variables are constants
+       and methods are abstract.
+
+       i.e interface constain only constants and abstract methods. (by default)
+
+    interface MyInterface {
+
+       double RATE_OF_INTEREST = 10.2;  // by default public static final 
+
+     	void m1(); // by default public abstract
+
+        void m2(); // by default public abstract
+
+     }
+
+   HOW TO USE INTERFACE ?
+
+    - using implements keyword
+
+    class MyClass implements MyInterface {
+
+		public void m1() {
+
+         }
+
+        public void m2() {
+
+        }
+    }
+
+
+--------------------------------
+
+interface MyInterface {
+    double PI = 3.14; //public static final
+    void m1();
+    void m2();
+}
+
+class MyClassOne implements MyInterface {
+
+    public void m1() {
+        System.out.println("m1 implementation inside class One");
+    }
+   
+    public void m2() {
+        System.out.println("m2 implementation inside class One");
+    }
+}
+
+class MyClassTwo implements MyInterface {
+
+	public void m1() {
+        System.out.println("m1 implementation inside class Two");
+    }
+   
+    public void m2() {
+        System.out.println("m2 implementation inside class Two");
+    }
+
+}
+
+
+ some predefined interfaces :
+
+   Comparable
+
+   Comparator
+
+   Runnable
+
+   Serializable  etc.
+
+
+   -  an interface can extends another interface
+
+      interface I1 {
+
+        void m1();
+      }
+
+      interface I2 extends I1 {
+
+       void m2();
+      }
+
+     class MyClass implements I2 {
+
+        public void m1 {
+
+        }
+        public void m2() {
+
+        }
+     }
+
+   - a class can extends only one class but implements any no of interfaces
+
+
+        class MySub extends MySuper implements I1,I2 {  // first extends then implements
+
+
+        }
+
+       class MySub implements I1 extends  MySuper {  // not correct.
+
+      }
+
+      class  A extends B,C {  // not correct
+
+      }
+
+
+      class A extends I1 { // not correct if I1 is an interface.
+
+
+      }
+
+     class A implements I1,I2 {  // correct
+
+     }
+
+
+
+   ----------------------------------------------
+
+  
+   java8 onwards we can define methods inside interface
+
+    default and static methods.
+
+
+    interface MyInterface {  
+
+      void m1(); // by default, public abstract 
+
+       default void m2() {
+
+       }
+
+      static void m3() {
+
+      }
+
+    }
+
+ ------------------------------------------
+
+  final keyword:
+
+    where to use?
+
+     final classes: we can't extends final classes.
+
+        final class A {
+
+        }
+
+        class B extends A {  // error
+
+        }
+
+
+     final methods:  we can't override
+
+      class A {
+       final void m1() {
+         System.out.println("m1 inside A");
+        }
+      }
+
+     class B extends A {
+
+       @Override
+       void m1() {  // error
+		System.out.println("m1 inside B");
+		}
+     } 
+
+
+     final variables: we can't modify the value
+
+        int k = 10;
+        k = 20;
+
+        final int i = 10;
+        i = 20; //error
+
+
+------------------------------------------------
+
+  + - %  
+
+   == < > <= >=
+
+  instnaceof operator:

@@ -694,3 +694,80 @@ class MyClassTwo implements MyInterface {
    == < > <= >=
 
   instnaceof operator:
+
+
+-----------------------------------------------------
+
+  Type casting:
+
+
+     - converting from one data type to another data type
+
+
+     byte b1 = 10;
+
+     byte b2 = 20;
+
+     byte b3 = b1+b2;
+
+    o/p:
+
+          b3 = 30;  //error
+
+   
+  class A {
+
+
+   }
+
+   class B extends A {
+
+
+   }
+
+   A a1 = new B(); //super class ref and sub class object
+
+   B b1 = (B) a1; // typecasting
+
+
+--------------------------------------------------------
+
+  Wrapper Classes:
+
+     - converting primitive type to object type
+
+    - for each primitive there is wrapper class defined in java
+
+        byte  -  Byte
+        short -  Short
+        int    - Integer
+        long  - Long
+
+        float - Float
+        double - Double
+
+        char - Character
+        boolean - Boolean
+
+    uses :
+
+		1. for various convertions
+
+            e.g String to int |  String to float ect
+
+        2. collections deals with only objects 
+
+           to store primitives , convert primtive into object and store it inside collections
+
+
+  
+
+
+
+
+
+
+
+
+
+

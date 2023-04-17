@@ -9,13 +9,16 @@ public class ExceptionDemo2 {
             int c = a/b; 
             //if exception occur, jre creates an exception object and throws it.
             //which exception object jre creates ?
-              // -> ArithmeticException ae = new ArithmeticException();
+              // -> Exception ae = new ArithmeticException();
             //how it throws ?
              // -> throw ae;
             System.out.println("c = "+c);
         }
         catch(ArithmeticException e) {
             System.out.println("denominator should not be zero");
+            System.out.println(e.getMessage());
+            System.out.println(e); // e.toString();
+            e.printStackTrace();
         }      
         System.out.println("Main Ends...");
     }

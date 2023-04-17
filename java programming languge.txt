@@ -759,8 +759,120 @@ class MyClassTwo implements MyInterface {
 
            to store primitives , convert primtive into object and store it inside collections
 
+===============================================================================================
+
+Exceptions:
+
+ - exception are runtime errors occur during exection
+
+ - if exception occur program termiated abnormally.
+
+ - to avoid the abnormal termincation we need to handle the excetions   
+
+  keywords to handle exceptions in java:
+ 
+  1. try - doubtful code inside try block
+
+  2. catch - to handle the exceptions
+
+  3. throw  - to throw exceptions explicitly
+
+  4. thorws - to declare the exceptions
+
+  5. finally - whether exception occur or not finally block is always executing
+               generally resource submission code like database closing, file closing code 
+
+
+  -> one try block can have multiple catch blocks
+
+   try {
+           
+        }
+        catch(ArithmeticException e) {
+          
+        }
+        catch(InputMismatchException e) {
+            
+	}
+
+ java version 7,
+
+    try {
+           
+    }
+    catch(ArithmeticException | InputMismatchException e) {
+          
+    }
+
+----------------------------
+
+Before java 7:
+
+  try {
+    Connection con = DriverManaer.getConnection(url,username,password);
+    //perform db operations using con object
+
+  }
+  catch(SQLException e) {
+
+  }
+  finally {
+
+     //close the connection object
+     con.close();
+  }
+        
+ java 7 onwards:  try with resource:
+
+   try(Connection con = DriverManaer.getConnection(url,username,password)) {
+
+   }
+  catch(SQLException e) {
+
+  }
+
+------------------
+
+
+   void m1(int k)  {
+
+
+   }
+
+   void m2(Shape d) {
+
+   }
+
+
+types of exceptins :
+
+1. checked : checked by the compiler at the time of compilation.
 
   
+     rule: either handle or declare otherwise compiler reports an error
+
+
+2. unchecked : not checked by the compiler
+
+--------------------------
+
+  user defined exceptions:
+
+  - to create user defined checked exception  
+
+     class AgeLimitExcetion extends Exception {
+
+     }
+
+  - to create user defined unchecked exception
+
+     class AgeLimitException extends RuntimeException {
+
+
+     }
+
+  
+
 
 
 

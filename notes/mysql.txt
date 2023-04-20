@@ -120,4 +120,174 @@ mysql> insert into student_course_tbl values(5002,300);
 
 mysql> select * from student_course_tbl;
 
+=========================================================
+
+mysql> select * from product_tbl;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
++------------+--------------+---------------+--------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select product_name from product_tbl;
++--------------+
+| product_name |
++--------------+
+| Dell XP      |
+| IPhoneX      |
+| SamsungF30   |
+| Sony Bravia  |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select product_name,product_price from product_tbl;
++--------------+---------------+
+| product_name | product_price |
++--------------+---------------+
+| SamsungF30   |         58000 |
+| IPhoneX      |         98000 |
+| Dell XP      |        128000 |
+| Sony Bravia  |        628000 |
++--------------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from product_tbl where category = 'mobile';
++------------+--------------+---------------+--------------+----------+
+| product_id | product_name | product_price | created_date | category |
++------------+--------------+---------------+--------------+----------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile   |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile   |
++------------+--------------+---------------+--------------+----------+
+2 rows in set (0.01 sec)
+
+mysql> select * from product_tbl;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
++------------+--------------+---------------+--------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from product_tbl where product_price > 100000;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
++------------+--------------+---------------+--------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into product_tbl values(1050,'SonyM',20000,'2022-01-30','headphone');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from product_tbl;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
+|       1050 | SonyM        |         20000 | 2022-01-30   | headphone  |
++------------+--------------+---------------+--------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from product_tbl order by product_price;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1050 | SonyM        |         20000 | 2022-01-30   | headphone  |
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
++------------+--------------+---------------+--------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from product_tbl order by product_price desc;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1050 | SonyM        |         20000 | 2022-01-30   | headphone  |
++------------+--------------+---------------+--------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from product_tbl order by product_price asc;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1050 | SonyM        |         20000 | 2022-01-30   | headphone  |
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
++------------+--------------+---------------+--------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select count(*) from product_tbl;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.04 sec)
+
+mysql> select count(*) as noOfProducts from product_tbl;
++--------------+
+| noOfProducts |
++--------------+
+|            5 |
++--------------+
+1 row in set (0.01 sec)
+
+mysql> select max(product_price) from product_tbl;
++--------------------+
+| max(product_price) |
++--------------------+
+|             628000 |
++--------------------+
+1 row in set (0.01 sec)
+
+mysql> select min(product_price) from product_tbl;
++--------------------+
+| min(product_price) |
++--------------------+
+|              20000 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from product_tbl;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
+|       1050 | SonyM        |         20000 | 2022-01-30   | headphone  |
++------------+--------------+---------------+--------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from product_tbl limit 3;
++------------+--------------+---------------+--------------+----------+
+| product_id | product_name | product_price | created_date | category |
++------------+--------------+---------------+--------------+----------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile   |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile   |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop   |
++------------+--------------+---------------+--------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from product_tbl limit 3,2;
     

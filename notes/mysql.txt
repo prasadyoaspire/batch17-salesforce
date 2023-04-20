@@ -291,3 +291,70 @@ mysql> select * from product_tbl limit 3;
 
 mysql> select * from product_tbl limit 3,2;
     
+
+
+------------------------------------------------------
+
+update:
+
+mysql> select * from product_tbl;
++------------+--------------+---------------+--------------+------------+
+| product_id | product_name | product_price | created_date | category   |
++------------+--------------+---------------+--------------+------------+
+|       1010 | SamsungF30   |         58000 | 2023-04-20   | mobile     |
+|       1020 | IPhoneX      |         98000 | 2023-04-10   | mobile     |
+|       1030 | Dell XP      |        128000 | 2023-04-10   | laptop     |
+|       1040 | Sony Bravia  |        628000 | 2023-04-10   | television |
+|       1050 | SonyM        |         20000 | 2022-01-30   | headphone  |
++------------+--------------+---------------+--------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update product_tbl set product_price = 59000 where product_id = 1010;
+
+mysql> update product_tbl set product_price = 120000,product_name='IPhoneX+' where product_id = 1020;
+
+mysql> select * from product_tbl;
+
+Delete:
+
+mysql> delete from product_tbl where product_id = 1050;
+
+mysql> delete from product_tbl; // all the records are deleted 
+
+
+-------------------------
+
+Group By:
+
+mysql> select * from employee_tbl;
++--------+------------+-----------+------------------+------------+---------+
+| emp_id | first_name | last_name | email            | mobile     | dept_no |
++--------+------------+-----------+------------------+------------+---------+
+|   1001 | raj        | kumar     | raj@tmail.com    | 9638527410 |      10 |
+|   1002 | Virat      | K         | virat@tmail.com  | 9638527412 |      30 |
+|   1003 | rohit      | S         | rohit@tmail.com  | 9638527512 |      10 |
+|   1004 | Sameer     | S         | sammer@tmail.com | 8638527512 |      20 |
++--------+------------+-----------+------------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select dept_no,count(*) from employee_tbl group by dept_no;
++---------+----------+
+| dept_no | count(*) |
++---------+----------+
+|      10 |        2 |
+|      20 |        1 |
+|      30 |        1 |
++---------+----------+
+
+  Join :
+
+  mysql> select e.first_name,e.last_name,d.dept_name from employee_tbl e join department_tbl d on e.dept_no = d.dept_id;
++------------+-----------+-----------+
+| first_name | last_name | dept_name |
++------------+-----------+-----------+
+| raj        | kumar     | IT        |
+| rohit      | S         | IT        |
+| Sameer     | S         | HR        |
+| Virat      | K         | Sales     |
++------------+-----------+-----------+
+

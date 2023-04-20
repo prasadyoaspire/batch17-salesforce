@@ -1,0 +1,123 @@
+mysql> create table product_tbl (product_id int,product_name varchar(30) unique not null,product_price float not null,created_date date,category varchar(30),primary key(product_id));
+
+
+mysql> insert into product_tbl values(1010,'SamsungF30',58000,'2023-04-20','mobile');
+
+mysql> insert into product_tbl values(1020,'IPhoneX',98000,'2023-04-10','mobile');
+
+mysql> insert into product_tbl values(1030,'Dell XP',128000,'2023-04-10','laptop');
+
+mysql> insert into product_tbl values(1040,'Sony Bravia',628000,'2023-04-10','television');
+
+mysql> select * from product_tbl;
+
+-------------------------------------------------
+
+ constraints:
+
+    1. primary key
+
+    2. foreign key
+
+    3. unique
+
+    4. not null
+
+    5. check
+
+
+    relationships:
+
+     ecom appliation:
+
+
+     what are the entities:
+
+
+          Customer
+
+          Product 
+
+          Cart
+
+          Order
+
+      what are the relations:
+
+         customer ---> cart :  one to one
+
+         customer ---> order : one to many
+
+         order ----> product : many to many
+
+
+   ---------------------------------
+
+    one to many relation:
+   ----------------------------------
+
+	department ---> employee :  In one department many employees are working.
+
+    Department Table: 
+
+   	mysql> create table department_tbl (dept_id int, dept_name varchar(30),primary key(dept_id));
+
+	mysql> insert into department_tbl values(10,'IT');
+	mysql> insert into department_tbl values(20,'HR');
+	mysql> insert into department_tbl values(30,'Sales');
+
+	mysql> select * from department_tbl;
+
+    Employee Table :
+
+ 	mysql> create table employee_tbl(emp_id int,first_name varchar(30),last_name varchar(30),email varchar(50) unique,mobile varchar(10),dept_no int,primary key(emp_id), foreign key(dept_no) references department_tbl(dept_id));
+
+	mysql> insert into employee_tbl values(1001,'raj','kumar','raj@tmail.com','9638527410',10);
+	mysql> insert into employee_tbl values(1002,'Virat','K','virat@tmail.com','9638527412',30);
+	mysql> insert into employee_tbl values(1003,'rohit','S','rohit@tmail.com','9638527512',10);
+	mysql> insert into employee_tbl values(1004,'Sameer','S','sammer@tmail.com','8638527512',20);
+
+	mysql> select * from employee_tbl;
+
+	----------------------------
+		Many to Many
+	----------------------------
+
+       Many to many : Student and Course
+
+       - one student can register in n number of courses and in one courese n number of students can register.
+
+   Student Table:
+
+	mysql> create table student_tbl (student_id int, student_name varchar(30), dob date, gener varchar(8),email varchar(30),mobile varchar(10), primary key(student_id));
+
+
+mysql> insert into student_tbl values(5001,'raj','2010-01-01','male','raj@tmail.com','8956237410');
+mysql> insert into student_tbl values(5002,'megha','2011-01-01','female','megha@tmail.com','9956237410');
+
+mysql> select * from student_tbl;
+
+  Course Table:
+
+mysql> create table course_tbl (course_id int, course_name varchar(30),duration int, fees float,primary key(course_id));
+
+
+mysql> insert into course_tbl values(100,'core java',30,5000);
+mysql> insert into course_tbl values(200,'sql',20,3000);
+mysql> insert into course_tbl values(300,'javascript',40,7000);
+
+mysql> select * from course_tbl;
+
+
+  Student course Table:
+
+	mysql> create table student_course_tbl (studentId int, courseId int,primary key(studentId,courseId),foreign key(studentId) references student_tbl(student_id),foreign key(courseId) references course_tbl(course_id));
+
+mysql> insert into student_course_tbl values(5001,100);
+mysql> insert into student_course_tbl values(5001,200);
+mysql> insert into student_course_tbl values(5002,200);
+mysql> insert into student_course_tbl values(5002,300);
+
+mysql> select * from student_course_tbl;
+
+    

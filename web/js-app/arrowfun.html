@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Function Demo1</title>
+        <script>            
+          
+           let f1 = function () {
+            document.write("<br><br>firstclass..");
+           }
+
+           let f2 = () => {
+            document.write("<br><br>arrow functions..");
+           }
+
+           let f3 = (a,b) => {
+            let c = a+b;
+            return c;
+           }
+
+        </script>
+    </head>
+    <body>
+        <h1>Function Demo1</h1>
+        <script>
+           
+           f1();
+           f2();
+
+           const result1 = f3(20,30);
+           document.write("<br><br>Sum: "+result1);
+
+        </script>
+    </body>
+</html>

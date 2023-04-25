@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Demo1</title>
+</head>
+
+<body>
+    <h1>JS Demo1</h1>
+    <script>
+        let emp = {
+            "empId": 1001,
+            "empName": 'raj',
+            "salary": 50000
+        };
+        document.write("<br>EmpId: " + emp.empId);
+        document.write("<br>Name: " + emp.empName);
+        document.write("<br>Salary: " + emp.salary);
+
+        let product = {};
+
+        product['productId'] = 501;
+        product['productName'] = 'IphoneX';
+        product['productPrice'] = 89000;
+
+        document.write("<br>ProductId: " + product.productId);
+        document.write("<br>Name: " + product.productName);
+        document.write("<br>Salary: " + product.productPrice);
+
+        let emplist = [
+            {
+                "empId": 1001,
+                "empName": 'raj',
+                "salary": 50000
+            },
+            {
+                "empId": 1002,
+                "empName": 'krish',
+                "salary": 40000
+            },
+            {
+                "empId": 1003,
+                "empName": 'sameer',
+                "salary": 60000
+            }
+        ];
+
+        document.write("<br>Employees<br>");
+        for(let i = 0;i<emplist.length;i++) {
+            document.write(emplist[i].empId+" "+emplist[i].empName+" "+emplist[i].salary+"<br>");
+        }
+
+    </script>
+</body>
+
+</html>

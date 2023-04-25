@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Demo1</title>
+</head>
+
+<body>
+    <h1>Array Demo1</h1>
+    <script>
+        let nums = [10, 20, 30, 40];
+        //    nums[4] = 50;
+        //    nums[5] = 60;
+        nums.push(50);
+        nums.push(60);
+        nums.push(70);
+
+        for (let i = 0; i < nums.length; i++) {
+            document.write(nums[i] + " ");
+        }
+
+        document.write("<br><br>After delete:<br>");
+        nums.pop();
+        nums.pop();
+
+        for (let i = 0; i < nums.length; i++) {
+            document.write(nums[i] + " ");
+        }
+
+    </script>
+</body>
+
+</html>

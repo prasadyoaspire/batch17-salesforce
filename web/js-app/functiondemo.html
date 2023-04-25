@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Function Demo1</title>
+        <script>            
+           function sayHello() {
+            document.write("Hello JS");
+           }
+
+           function sum(a,b) {
+            let c = a+b;
+            return c;
+           }
+
+        //    let f1 = function myFun() {
+        //     document.write("<br><br>firstclass..");
+        //    }
+
+           let f1 = function () {
+            document.write("<br><br>firstclass..");
+           }
+
+        </script>
+    </head>
+    <body>
+        <h1>Function Demo1</h1>
+        <script>
+           sayHello();
+
+           const result = sum(10,30);
+           document.write("<br>Sum: "+result);
+
+           f1();
+
+        </script>
+    </body>
+</html>

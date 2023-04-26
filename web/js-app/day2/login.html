@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <script>
+        function handleSubmit() {
+            let uname = document.loginForm.uname.value;
+            let upwd = document.loginForm.upwd.value;
+            if (!uname) {
+                alert('username is required');
+                //document.getElementById("unameError").innerHTML = "Username is required";
+                return false;
+            }
+            if (!upwd) {
+                 alert('password is required');
+                //document.getElementById("upwdError").innerHTML = "Password is required";
+                return false;
+            }
+            alert("form submitted");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Login Form</h1>
+    <form name="loginForm" onsubmit="return handleSubmit()">
+        <div>
+            <label for="uname">Username</label>
+            <input type="text" name="uname" id="uname" />
+            <span id="unameError"> </span>
+        </div>
+        <div>
+            <label for="upwd">Password</label>
+            <input type="password" name="upwd" id="upwd" />
+            <span id="upwdError"> </span>
+        </div>
+        <input type="submit" value="login" />
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <form>
+            <div>
+                <label for="fname">FistName</label>
+                <input type="text" name="fname" id="fname" pattern="[a-zA-Z]{5,15}"/>
+            </div>
+            <div>
+                <label for="lname">LastName</label>
+                <input type="text" name="lname" id="lname"/>
+            </div>
+            <div>
+                <label for="gender">Gender</label>               
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">FeMale
+            </div>
+            <div>
+                <label for="dob">DOB</label>
+                <input type="date" name="dob" id="dob"/>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"/>
+            </div>
+            <div>
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="">--Select--</option>
+                    <option value="Ind">IND</option>
+                    <option value="US">US</option>
+                    <option value="UK">UK</option>
+                    <option value="Russia">RUSSIA</option>
+                </select>
+            </div>
+            <div>
+                <lable for="skills">Skills</lable>
+                <input type="checkbox" name="skills" id="skills" value="java">Java
+                <input type="checkbox" name="skills" id="skills" value="sql">Sql
+                <input type="checkbox" name="skills" id="skills" value="html">HTML
+                <input type="checkbox" name="skills" id="skills" value="css">CSS
+                <input type="checkbox" name="skills" id="skills" value="javascript">JavaScript
+                <input type="checkbox" name="skills" id="skills" value="c">C
+                <input type="checkbox" name="skills" id="skills" value="c++">C++
+            </div>
+
+            <input type="submit" value="register"/>
+        </form>
+      
+    </body>
+</html>
